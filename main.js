@@ -18,9 +18,9 @@ function model_loaded() {
 
 function getresult(error_message, object_result) {
     if (error_message) {
-       // console.error(error_message);
+        console.error(error_message);
     } else {
-        //console.log(object_result);
+    console.log(object_result);
         objects = object_result;
     }
 }
@@ -33,20 +33,20 @@ function draw() {
             console.log("inside the for");
             document.getElementById("status").innerHTML = "Object Detected";
             document.getElementById("number_object").innerHTML=objects.length;
-            // object_name = objects[i].label;
-            // object_percentage = ((objects[i].confidence)*100).toFixed(0);
-            // object_x = objects[i].x;
-            // object_y = objects[i].y;
-            // object_height = objects[i].height;
-            // object_width = objects[i].width;
-            // fill('rgba(255,204,0,0.5)');
-            // rect(object_x - 5, object_y - 40, object_name.length * 35, 40);
-            // fill("black");
-            // textSize(25);
-            // text(object_name + " " + object_percentage + "%", object_x, object_y-15);
-            // noFill();
-            // stroke("blue");
-            // rect(object_x,object_y,object_width,object_height);
+            object_name = objects[i].label;
+             object_percentage = ((objects[i].confidence)*100).toFixed(0);
+             object_x = objects[i].x;
+            object_y = objects[i].y;
+            object_height = objects[i].height;
+            object_width = objects[i].width;
+            fill('rgba(255,204,0,0.5)');
+            rect(object_x - 5, object_y - 40, object_name.length * 35, 40);
+            fill("black");
+            textSize(25);
+            text(object_name + " " + object_percentage + "%", object_x, object_y-15);
+            noFill();
+            stroke("blue");
+            rect(object_x,object_y,object_width,object_height);
         }
     }
 }
